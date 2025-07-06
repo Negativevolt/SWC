@@ -6,7 +6,7 @@ const app = express();
 app.use(express.json());
 
 const auth = new google.auth.GoogleAuth({
-  keyFile: 'service_account.json',
+  keyFile: 'discord-bot-api-461301-6232075645d9.json',
   scopes: ['https://www.googleapis.com/auth/spreadsheets.readonly'],
 });
 
@@ -17,7 +17,7 @@ app.post('/login', async (req, res) => {
   const client = await auth.getClient();
   const sheets = google.sheets({ version: 'v4', auth: client });
 
-  const spreadsheetId = 'YOUR_SPREADSHEET_ID';
+  const spreadsheetId = '1-GgAXS3HRZ7KtL2qpWb7kHlGcsW4p9WuVtyWYvBz-hY';
   const range = 'Sheet1!A2:C'; // Assuming headers are in row 1
 
   const response = await sheets.spreadsheets.values.get({ spreadsheetId, range });
